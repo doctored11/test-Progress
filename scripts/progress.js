@@ -16,8 +16,31 @@ export default class ProgressBlock {
         this.circle.style.strokeDashoffset = offset;
     }
 
+
+    setAnimate(isAnimating) {
+        this.isAnimating = isAnimating;
+
+        if (isAnimating) {
+            this.startRotation();
+        } else {
+            cancelAnimationFrame(this.animationFrame);
+            this.rotation = 0;
+            this.circle.setAttribute('transform', `rotate(-90 50 50)`);
+        }
+    }
+
+
     startRotation() {
-       
+        const rotateStep = () => {
+            this.rotation = (this.rotation + 2) % 360;
+            this.circle.setAttribute('transform', `rotate(${this.rotation - 90} 50 50)`);
+
+            if (this.isAnimating) {
+                this.animationFrame = requestAnimationFrame(rotateStep);
+            }
+        };
+
+        rotateStep();
     }
 
     setHidden(isHidden) {
