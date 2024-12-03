@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Test</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-wrapper">
+        <svg class="progress" width="100" height="100"></svg>
+      </div>
+
+      <div class="controls">
+        <label>
+          Value:
+          <input type="number" id="valueInput" min="0" max="100" value="0" />
+        </label>
+        <label>
+          <input type="checkbox" id="animateToggle" />
+          Animated
+        </label>
+        <label>
+          <input type="checkbox" id="hideToggle" />
+          Hidden
+        </label>
+      </div>
+    </div>
+
+    <script src="./scripts/progress.js" type="module"></script>
+  </body>
+</html>
