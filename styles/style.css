@@ -1,0 +1,152 @@
+body {
+  background-color: #f4dcdc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  background-color: #fff;
+}
+
+.progress-wrapper {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.progress {
+  display: block;
+}
+
+.progress-circle {
+  transition: stroke-dashoffset 0.3s ease;
+}
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.controls__control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.controls__label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #c7c3c4aa;
+}
+
+.controls__input {
+  outline: none;
+}
+
+.controls__input--number {
+  width: 60px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: 1px solid #c7c3c4aa;
+  border-radius: 20px;
+  background-color: #f5f5f5;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.controls__input--number:focus {
+  border-color: #d4e7f1;
+}
+
+.controls__input--checkbox {
+  display: none;
+}
+
+.controls__toggle {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #99a2ad;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.controls__toggle::before {
+  content: "";
+  z-index: 5;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.controls__toggle::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: none;
+  border-radius: 50%;
+  border: 2px solid #838a93;
+  top: 4px;
+  left: 24px;
+  /* transition: all 0.3s ease-in-out; */
+}
+
+.controls__input--checkbox:checked + .controls__toggle {
+  background-color: #d4e7f1;
+}
+
+.controls__input--checkbox:checked + .controls__toggle::before {
+  transform: translateX(20px);
+}
+
+.controls__input--checkbox:checked + .controls__toggle::after {
+  border: none;
+  background-color: #fff;
+  width: 3px;
+  height: 12px;
+  border-radius: 2px;
+  top: 4px;
+  left: 8px;
+}
+
+.controls__text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .progress-wrapper {
+    width: 80;
+    height: 80px;
+  }
+
+  .controls__label {
+    font-size: 12px;
+  }
+
+  .controls__input--number {
+    width: 50px;
+  }
+}
