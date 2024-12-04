@@ -1,56 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Progress Test</title>
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="progress-wrapper">
-        <svg class="progress" width="100" height="100" viewBox="0 0 100 100">
-          <circle
-            cx="50"
-            cy="50"
-            r="45"
-            fill="none"
-            stroke="#c7c3c4aa"
-            stroke-width="10"
-          ></circle>
-          
-          <circle
-            class="progress-circle"
-            cx="50"
-            cy="50"
-            r="45"
-            fill="none"
-            stroke="#d4e7f1"
-            stroke-width="10"
-            stroke-dasharray="282.6"
-            stroke-dashoffset="282.6"
-            stroke-linecap="round"
-            transform="rotate(-90 50 50)"
-          ></circle>
-        </svg>
-      </div>
-
-      <div class="controls">
-        <label>
-          Value:
-          <input type="number" id="valueInput" min="0" max="100" value="0" />
-        </label>
-        <label>
-          <input type="checkbox" id="animateToggle" />
-          Animated
-        </label>
-        <label>
-          <input type="checkbox" id="hideToggle" />
-          Hidden
-        </label>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress Test </title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="heading-wrapper">
+        <h1 class="heading">Progress</h1>
     </div>
 
-    <script src="./scripts/progress.js" type="module"></script>
-  </body>
+    <div class="vidget-wrapper">
+        <div class="progress-wrapper">   
+                    
+            <svg class="progress" width="150" height="150" viewBox="0 0 100 100">
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="none"
+                    stroke="#c7c3c4aa"
+                    stroke-width="10"
+                ></circle>
+                <circle
+                    class="progress-circle"
+                    cx="50"
+                    cy="50"
+                    r="45"
+                    fill="none"
+                    stroke="#d4e7f1"
+                    stroke-width="10"
+                    stroke-dasharray= "282.6"
+                    stroke-dashoffset="282.6"
+                    stroke-linecap="round"
+                    transform="rotate(-90 50 50)"
+                ></circle>
+            </svg>
+    </div>
+
+   
+    <div class="controls">
+        <div class="controls__control">
+          <label class="controls__label">
+            <input
+              class="controls__input controls__input--number"
+              type="number"
+              id="valueInput"
+              min="0"
+              max="100"
+              value="0"
+            />
+            
+
+            <span class="controls__text">Value</span>
+          </label>
+        </div>
+        <div class="controls__control">
+          <label class="controls__label">
+            <input
+              class="controls__input controls__input--checkbox"
+              type="checkbox"
+              id="animateToggle"
+            />
+            <span class="controls__toggle"></span>
+            <span class="controls__text">Animated</span>
+          </label>
+        </div>
+        <div class="controls__control">
+          <label class="controls__label">
+            <input
+              class="controls__input controls__input--checkbox"
+              type="checkbox"
+              id="hideToggle"
+            />
+            <span class="controls__toggle"></span>
+            <span class="controls__text">Hide</span>
+          </label>
+        </div>
+    </div>
+</div> 
+      
+
+  <script src="./scripts/progress.js" type="module"></script>
+  <script src="./scripts/script.js" type="module"></script>
+</body>
 </html>

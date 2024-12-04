@@ -26,6 +26,8 @@ export default class ProgressBlock {
             cancelAnimationFrame(this.animationFrame);
             this.rotation = 0;
             this.circle.setAttribute('transform', `rotate(-90 50 50)`);
+
+           
         }
     }
 
@@ -44,7 +46,7 @@ export default class ProgressBlock {
     }
 
     setHidden(isHidden) {
-        const parent = this.circle.closest('.progress-wrapper');
+        const parent = this.circle.closest('.progress');
         parent.style.display = isHidden ? 'none' : 'block';
     }
 }
